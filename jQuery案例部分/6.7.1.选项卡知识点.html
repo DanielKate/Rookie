@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>选项卡知识点</title>
+<style>
+.btn{ width:100px; height:30px; background:#09C; margin:10px;}
+.box{ width:300px; height:300px; background:#F96; margin:10px;}
+</style>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+
+$(function(){
+	$(".btn").click(function(){
+		
+		var idx=$(this).index();	  	
+		
+		$(this).css("background","red").siblings(".btn").css("background","#09C")
+		
+		$(".box").eq(idx).css("background","green").siblings(".box").css("background","#F96")
+	})	
+})
+
+</script>
+</head>
+
+<body>
+
+
+<div class="btn">1</div>
+<div class="btn">2</div>
+<div class="btn">3</div>
+<div class="btn">4</div>
+
+<div class="box">内容1</div>
+<div class="box">内容2</div>
+<div class="box">内容3</div>
+<div class="box">内容4</div>
+
+
+</body>
+</html>

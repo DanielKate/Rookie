@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹出案例</title>
+<style>
+*{ padding:0; margin:0; font-family:"微软雅黑";}
+body{ background:url(images/7.jpg)}
+.btn{ width:130px; height:30px; background:#06C; color:#fff; text-align:center; line-height:30px; cursor:pointer;}
+.out{ width:600px; height:400px; background:#000; position:fixed; left:50%; margin-left:-300px; top:50%; margin-top:-200px; display:none; z-index:10;}
+.out video{ width:600px; height:400px;}
+
+.close{ width:30px; height:30px; background:#000; color:#fff; text-align:center; line-height:30px; font-size:20px; cursor:pointer; position:absolute; top:0; right:-30px;}
+
+.back{ width:100%; height:100%; background:#000; position:fixed; top:0;left:0; opacity:0.6; display:none; z-index:9;}
+</style>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<script>
+$(function(){
+	
+	var video=$(".out iframe").attr("src");
+	
+	$(".btn").click(function(){
+		$(".out,.back").css("display","block");
+		$(".out iframe").attr("src",video);
+			
+	})
+	
+	$(".close").click(function(){
+		$(".out,.back").css("display","none");	
+		$(".out iframe").attr("src","");		
+	})
+	
+	
+})
+</script>
+
+</head>
+
+<body>
+
+<div class="btn">登录</div>
+
+<div class="out">
+	<div class="close">×</div>
+    <iframe src='http://player.youku.com/embed/XMjk1OTAwODU0MA==' height=400 width=600 frameborder=0 'allowfullscreen'></iframe>   
+    
+</div>
+
+<div class="back"></div>
+
+<!--
+插入视频的方法
+一.插入本地视频
+1.mp4
+2.swf / flv
+优势：无广告
+缺点：打开速度比较慢
+
+
+二.插入网络视频
+1.优酷视频、土豆视频、腾讯视频 （优点：速度快，缺点：有广告）
+2.淘宝视频
+video.taobao.com
+-->
+
+
+<div style="height:1000px"></div>
+
+</body>
+</html>

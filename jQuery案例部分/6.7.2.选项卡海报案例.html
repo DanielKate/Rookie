@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>京东选项卡案例</title>
+<style>
+*{ padding:0; margin:0; list-style:none;}
+
+.banner{ width:790px; height:340px; border:3px solid green; margin:100px auto; position:relative;}
+.banner .pic li{ position:absolute; top:0; left:0; display:none;}
+.banner .num{ position:absolute;bottom:20px; }
+.banner .num li{ width:14px; height:14px; background:#000; float:left; margin:0 5px; border-radius:50%;}
+
+</style>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<script>
+$(function(){
+	
+	$(".banner .pic li").eq(0).show();	
+	$(".banner .num li").eq(0).css("background","red");
+	
+	$(".banner .num li").mouseover(function(){
+		$(this).css("background","red").siblings("li").css("background","#000");
+		var idx=$(this).index();
+		//$(".banner .pic li").eq(idx).show().siblings("li").hide();
+		$(".banner .pic li").eq(idx).fadeIn().siblings("li").fadeOut();
+		
+	})
+	
+})
+
+</script>
+</head>
+
+<body>
+
+
+<div class="banner">
+	<ul class="pic">
+    	<li>
+        	<a href="#">
+            	<img src="images/7.jpg"/>
+            </a>
+        </li>
+        
+        <li>
+        	<a href="#">
+            	<img src="images/8.jpg"/>
+            </a>
+        </li>
+        
+        <li>
+        	<a href="#">
+            	<img src="images/9.jpg"/>
+            </a>
+        </li>
+        
+        <li>
+        	<a href="#">
+            	<img src="images/10.jpg"/>
+            </a>
+        </li>
+    </ul>
+    
+    
+    <ol class="num">
+    	<li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+</div>
+
+
+</body>
+</html>

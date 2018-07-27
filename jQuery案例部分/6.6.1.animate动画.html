@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>动画</title>
+<style>
+.btn{ width:100px; height:30px; background:#03C;}
+.box{ width:400px; height:300px; background:#C96;}
+
+</style>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<script>
+$(function(){
+	$(".btn").click(function(){
+		//$(".box").css("width",500)
+		//$(".box").css({width:500,height:400,"background-color":"red"})	
+		$(".box").animate({width:600},2000,function(){ $(this).animate({height:500}) })  //回调函数
+	})	
+})
+</script>
+
+</head>
+
+<body>
+
+
+<div class="btn">按钮</div>
+
+<div class="box"></div>
+
+</body>
+</html>

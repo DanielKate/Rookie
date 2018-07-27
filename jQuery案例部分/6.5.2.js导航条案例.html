@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>css导航条</title>
+<style>
+*{ padding:0; margin:0; list-style:none; text-decoration:none; font-family:"微软雅黑"}
+.nav{ width:100%; height:40px; background:#333; margin-top:100px;}
+.nav ul{ width:1000px;   height:40px; margin:0 auto;}
+.nav li{ float:left; position:relative;}
+.nav li > a{ color:#ccc; line-height:40px; display:block; padding:0 30px;}
+.nav li:hover > a{ background:#444; color:#fff;}
+.nav .down{ width:150px; background:#444; position:absolute; top:40px; left:0; display:none;}
+.nav .down a{ display:block; font-size:14px; color:#ccc; padding-left:30px; line-height:30px; border-bottom:1px solid #555;}
+.nav .down a:hover{ background:#555; color:#fff;}
+
+.btn{ width:100px; height:30px; background:#0CF}
+</style>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+
+$(function(){
+	
+		/*$(".btn").mouseover(function(){
+			$(this).html("已经移入")	
+		})
+		
+		$(".btn").mouseout(function(){
+			$(this).html("划出了")	
+		})
+		*/
+		
+		
+	/*	$(".btn").mouseover(function(){
+			$(this).html("已经移入")	
+		}).mouseout(function(){
+			$(this).html("划出了")	
+		})*/
+		
+		
+/*		$(".btn").hover(function(){
+				
+		},function(){
+			alert(111111)
+		})
+		*/
+		
+		
+		$(".nav li").hover(function(){
+			//$(this).find(".down").show();
+			//$(this).find(".down").fadeIn();
+			$(this).find(".down").slideDown(200);
+		},function(){
+			//$(this).find(".down").hide();
+			//$(this).find(".down").fadeOut();
+			$(this).find(".down").slideUp(200);
+		})
+		
+})
+</script>
+
+</head>
+
+<body>
+
+<div class="btn">按钮</div>
+
+
+<div class="nav">
+	<ul>
+    	<li><a href="#">首页</a></li>
+        <li>
+        	<a href="#">关于我们</a>
+            <div class="down">
+            	<a href="#">公司介绍</a>
+                <a href="#">发展历程</a>
+                <a href="#">企业文化</a>
+                <a href="#">领导致辞</a>
+            </div>
+        </li>
+        
+        <li>
+        	<a href="#">新闻动态</a>
+            <div class="down">
+            	<a href="#">公司新闻</a>
+                <a href="#">行业动态</a>
+                <a href="#">视频中心</a>
+            </div>
+        </li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>

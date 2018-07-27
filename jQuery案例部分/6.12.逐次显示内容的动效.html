@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>逐次显示内容的动效</title>
+<style>
+*{ padding:0; margin:0}
+.header{ height:500px; background:#ccc;}
+.banner{ height:700px; background:#0CC}
+.about{ height:600px; background:#FC6; text-align:center; width:100%; overflow:hidden;}
+/*.about h1{ padding:60px 0 40px; position:relative; left:-100%; transition:0.5s}
+.about p{ padding:0 150px; position:relative; right:-100%; transition:0.5s 0.5s;}
+.about.on h1{ left:0;}
+.about.on p{ right:0;}
+*/
+
+.about h1{ padding:60px 0 40px; position:relative; top:300px;  transition:0.5s}
+.about p{ padding:0 150px; position:relative;   top:300px;     transition:0.5s 0.5s;}
+.about.on h1{ top:0; }
+.about.on p{  top:0}
+
+
+
+
+.news{ height:400px; background:#096;width:1000px; margin:0 auto; overflow:hidden;}
+.news .left{ width:300px; height:400px; background:#030; float:left; position:relative; left:-300px; transition:0.3s;}
+.news .right{ width:660px; height:400px; background:#F63; float:right; position:relative; right:-660px;transition:0.3s;}
+
+.news.on .left{ left:0;}
+.news.on .right{ right:0;}
+
+
+
+
+.footer{ height:400px; background:#999;}
+
+
+</style>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	var newsTop=$(".news").offset().top;
+	var abTop=$(".about").offset().top;
+	
+	
+	var winH=$(window).height()*0.7;
+	
+	
+	$(window).scroll(function(){
+		var st=$(this).scrollTop();
+		
+		if(st>=newsTop-winH){
+			$(".news").addClass("on")	
+		}
+		if(st>=abTop-winH){
+			$(".about").addClass("on")	
+		}
+		
+			
+	})	
+	
+})
+</script>
+
+
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="banner"></div>
+
+<div class="about">
+	<h1>标题内容标题内容标题内容标题内容标题内容</h1>
+    <p>文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息文字摘要信息</p>
+
+</div>
+
+<div class="news">
+
+	<div class="left">左边的内容</div>
+    
+    <div class="right">右边内容</div>
+</div>
+
+<div class="product"></div>
+
+<div class="footer"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>滚动条事件知识点</title>
+<style>
+*{ padding:0; margin:0;}
+.top{ width:50px; height:50px; background:#000; color:#fff; font-size:40px; text-align:center; line-height:50px; position: fixed; bottom:100px; right:60px; display:none; cursor:pointer;}
+</style>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	
+	
+	$(window).scroll(function(){
+		document.title=$(this).scrollTop();
+		
+		if($(this).scrollTop()>=300){
+			$(".top").fadeIn();				
+		}else{
+			$(".top").fadeOut();
+		}
+	})	
+	
+	
+	$(".top").click(function(){
+		$("body,html").stop().animate({scrollTop:0})	
+	})
+	
+})
+</script>
+</head>
+
+<body>
+<div class="top">↑</div>
+
+<div style="height:600px; background:#C9C">111111</div>
+<div style="height:600px; background:#0C9">222222</div>
+<div style="height:600px; background:#966">33333</div>
+<div style="height:600px; background:#999">444444</div>
+<div style="height:600px; background:#CC3">5555</div>
+
+</body>
+</html>
